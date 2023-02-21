@@ -4,14 +4,29 @@
 
 # Устновка
 Далее представлена последоательность действий для того, что бы размернуть данный проект на вашем ПК.
-
-> git clone project
-> cd api_final_yatube
-> python3 -m venv venv
-> source venv/bit/activate
-> pip3 install -r requirements.txt
-> cd yatube_api
-> python3 manage.py runserver
+```
+git clone project
+```
+```
+cd api_final_yatube
+```
+```
+python3 -m venv venv
+```
+```
+source venv/bit/activate
+```
+```
+pip3 install -r requirements.txt
+```
+```
+cd yatube_api
+```
+```
+python3 manage.py runserver
+```
 
 # Примеры запросов API
-> /api/v1/posts/
+```
+/api/v1/posts/
+```
