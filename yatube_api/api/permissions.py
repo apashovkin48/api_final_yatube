@@ -17,3 +17,9 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
 
         # Instance must have an attribute named `owner`.
         return obj.author == request.user
+
+
+class ReadOnly(permissions.BasePermission):
+
+    def has_permission(self, request, view):
+        return request.method in permissions.SAFE_METHODS

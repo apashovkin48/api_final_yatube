@@ -1,0 +1,59 @@
+@get_token = http://127.0.0.1:8000/api/v1/api-token-auth/
+@posts = http://127.0.0.1:8000/api/v1/posts/
+@post = http://127.0.0.1:8000/api/v1/posts/1/
+@comments = http://127.0.0.1:8000/api/v1/posts/1/comments/
+@comment = http://127.0.0.1:8000/api/v1/posts/1/comments/1/
+@groups = http://127.0.0.1:8000/api/v1/groups/
+@group = http://127.0.0.1:8000/api/v1/groups/1/
+
+###
+POST {{get_token}} HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ap",
+    "password": "qwe123"
+}
+
+###
+GET {{posts}} HTTP/1.1
+content-type: application/json
+
+###
+GET {{post}} HTTP/1.1
+content-type: application/json
+
+###
+POST {{posts}} HTTP/1.1
+Authorization: Token 1336b85815ad129afbde4df9f20c76c65c3c9a45
+content-type: application/json
+
+{
+    "text": "Почти самый лучший пост в мире",
+    "image": null
+}
+
+###
+GET {{comments}} HTTP/1.1
+content-type: application/json
+
+###
+GET {{comment}} HTTP/1.1
+content-type: application/json
+
+###
+POST {{comments}} HTTP/1.1
+Authorization: Token 1336b85815ad129afbde4df9f20c76c65c3c9a45
+content-type: application/json
+
+{
+    "text": "Тут должно быть что то интересное"
+}
+
+###
+GET {{groups}} HTTP/1.1
+content-type: application/json
+
+###
+GET {{group}} HTTP/1.1
+content-type: application/json
