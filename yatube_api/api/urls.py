@@ -1,5 +1,5 @@
 from rest_framework.routers import SimpleRouter
-from api.views import PostViewSet, GroupViewSet, CommentViewSet
+from api.views import PostViewSet, GroupViewSet, CommentViewSet, FollowViewSet
 from rest_framework.authtoken import views
 from django.urls import path, include
 
@@ -19,8 +19,12 @@ router.register(
     CommentViewSet,
     basename='comments'
 )
+router.register(
+    'v1/follow',
+    FollowViewSet,
+    basename='follow'
+)
 
 urlpatterns = [
-    path('v1/api-token-auth/', views.obtain_auth_token),
     path('', include(router.urls)),
 ]

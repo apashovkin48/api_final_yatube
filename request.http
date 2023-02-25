@@ -1,18 +1,29 @@
-@get_token = http://127.0.0.1:8000/api/v1/api-token-auth/
+@create_user = http://127.0.0.1:8000/auth/users/
+@get_token = http://127.0.0.1:8000/auth/jwt/create/
 @posts = http://127.0.0.1:8000/api/v1/posts/
 @post = http://127.0.0.1:8000/api/v1/posts/1/
 @comments = http://127.0.0.1:8000/api/v1/posts/1/comments/
 @comment = http://127.0.0.1:8000/api/v1/posts/1/comments/1/
 @groups = http://127.0.0.1:8000/api/v1/groups/
 @group = http://127.0.0.1:8000/api/v1/groups/1/
+@follow = http://127.0.0.1:8000/api/v1/follow/
+
+###
+POST {{create_user}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "apap",
+    "password": "qwe123asddsa"
+}
 
 ###
 POST {{get_token}} HTTP/1.1
 content-type: application/json
 
 {
-    "username": "ap",
-    "password": "qwe123"
+    "username": "apap",
+    "password": "qwe123asddsa"
 }
 
 ###
@@ -25,11 +36,11 @@ content-type: application/json
 
 ###
 POST {{posts}} HTTP/1.1
-Authorization: Token 1336b85815ad129afbde4df9f20c76c65c3c9a45
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NDAwMzc4LCJqdGkiOiJiMzQxZmU2YTE5NTc0NDkzYjQ2Y2I0Mjk2ZGViYjg2YSIsInVzZXJfaWQiOjN9.NQTv1JDaMLlWm7Qex9jO49_aJpxIhGl7BjP5NzWB5Ps
 content-type: application/json
 
 {
-    "text": "Почти самый лучший пост в мире",
+    "text": "3й самый лучший пост в мире",
     "image": null
 }
 
@@ -43,7 +54,7 @@ content-type: application/json
 
 ###
 POST {{comments}} HTTP/1.1
-Authorization: Token 1336b85815ad129afbde4df9f20c76c65c3c9a45
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
 content-type: application/json
 
 {
@@ -57,3 +68,17 @@ content-type: application/json
 ###
 GET {{group}} HTTP/1.1
 content-type: application/json
+
+###
+GET {{follow}} HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
+content-type: application/json
+
+###
+POST {{follow}} HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
+content-type: application/json
+
+{
+    "following": "apap"
+}
