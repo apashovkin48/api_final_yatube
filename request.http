@@ -2,6 +2,7 @@
 @get_token = http://127.0.0.1:8000/auth/jwt/create/
 @posts = http://127.0.0.1:8000/api/v1/posts/
 @post = http://127.0.0.1:8000/api/v1/posts/1/
+@update_post = http://127.0.0.1:8000/api/v1/posts/7/
 @comments = http://127.0.0.1:8000/api/v1/posts/1/comments/
 @comment = http://127.0.0.1:8000/api/v1/posts/1/comments/1/
 @groups = http://127.0.0.1:8000/api/v1/groups/
@@ -28,6 +29,7 @@ content-type: application/json
 
 ###
 GET {{posts}} HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
 content-type: application/json
 
 ###
@@ -41,6 +43,17 @@ content-type: application/json
 
 {
     "text": "3й самый лучший пост в мире",
+    "group": 7,
+    "image": null
+}
+
+###
+PUT {{update_post}} HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NDAwMzc4LCJqdGkiOiJiMzQxZmU2YTE5NTc0NDkzYjQ2Y2I0Mjk2ZGViYjg2YSIsInVzZXJfaWQiOjN9.NQTv1JDaMLlWm7Qex9jO49_aJpxIhGl7BjP5NzWB5Ps
+content-type: application/json
+
+{
+    "text": "string string",
     "image": null
 }
 
@@ -63,10 +76,15 @@ content-type: application/json
 
 ###
 GET {{groups}} HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
 content-type: application/json
 
 ###
 GET {{group}} HTTP/1.1
+content-type: application/json
+
+###
+POST {{groups}} HTTP/1.1
 content-type: application/json
 
 ###
