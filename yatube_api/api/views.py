@@ -18,7 +18,6 @@ class PostViewSet(viewsets.ModelViewSet):
         permissions.IsAuthenticatedOrReadOnly,
         IsAuthorOrReadOnly,
     ]
-    pagination_class = LimitOffsetPagination
 
     def perform_create(self, serializer):
         print(self.kwargs.keys())
@@ -31,7 +30,6 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
     ]
-    pagination_class = LimitOffsetPagination
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -65,7 +63,7 @@ class FollowViewSet(
     search_fields = ['user__username', 'following__username']
 
     def get_queryset(self):
-        return self.request.user.following
+        return self.request.user.follower
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
