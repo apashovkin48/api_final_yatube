@@ -89,14 +89,14 @@ content-type: application/json
 
 ###
 GET {{follow}} HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYyNzcwLCJqdGkiOiIxNGE4MmZlM2ZjMmU0NWE5OWU0MzE1MzM5OGZlOTQ0MCIsInVzZXJfaWQiOjN9.J12LfT9syw-ydoWDbWlM9p_4ev8QUUgScb8kAKXpTFE
 content-type: application/json
 
 ###
 POST {{follow}} HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3Mzk5Mjg3LCJqdGkiOiI0NjJhNTk5YjdkMTU0Zjc4YWRkMTBhZGZlYmU3YjliZCIsInVzZXJfaWQiOjF9.m3UPY8S-EVQ30r8uXeFhLm7omEeoDH_C-97jfcU3Eso
+Authorization: Baerer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYyNzcwLCJqdGkiOiIxNGE4MmZlM2ZjMmU0NWE5OWU0MzE1MzM5OGZlOTQ0MCIsInVzZXJfaWQiOjN9.J12LfT9syw-ydoWDbWlM9p_4ev8QUUgScb8kAKXpTFE
 content-type: application/json
 
 {
-    "following": "apap"
+    "following": "pp"
 }
