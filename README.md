@@ -49,13 +49,11 @@ python3 manage.py runserver
 ```
 
 # Используемые технолигии
-```
 - Python
 - Django
 - Django REST Framework
 - Simple JWT
 - SQLite3
-```
 
 # Примеры запросов API для работы с постами
 ```
